@@ -8,11 +8,12 @@ steps:
     image: qmkfm/qmk_firmware:latest
     commands:
       - make git-submodule
-      - qmk compile -kb massdrop/alt -km personal
+      - make massdrop/alt:joxcat
   - name: merge upstream
     image: alpine/git:latest
     commands:
-      - git merge https://github.com/qmk/qmk_firmware.git
+      - git remote add master_upstream https://github.com/qmk/qmk_firmware.git
+      - git merge master_upstream/master
 
 trigger:
   event:
