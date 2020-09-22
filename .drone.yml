@@ -12,10 +12,8 @@ steps:
   - name: merge upstream
     image: alpine/git:latest
     commands:
-      - git remote add master_upstream https://github.com/qmk/qmk_firmware.git
-      - git fetch master_upstream
       # - git merge master_upstream/master
-      - git pull -ff master_upstream/master
+      - git pull -ff https://github.com/qmk/qmk_firmware.git
 
 trigger:
   event:
