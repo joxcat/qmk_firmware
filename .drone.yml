@@ -1,0 +1,20 @@
+---
+kind: pipeline
+type: docker
+name: Build and upstream merge check
+
+steps:
+  - name: build
+    image: qmkfm/qmk_firmware:latest
+    commands:
+      - make git-submodule
+      - qmk compile -kb massdrop/alt -km personal
+  - name: merge upstream
+    image: alpine/git:latest
+    commands:
+      - git merge https://github.com/qmk/qmk_firmware.git
+
+trigger:
+  event:
+    - cron
+    - push
