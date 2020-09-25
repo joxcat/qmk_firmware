@@ -109,8 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, KC_WH_U, _______, _______, _______, _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, KC_WH_L, KC_WH_D, KC_WH_R, _______, _______,          _______, _______, \
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______, \
-        _______, _______, _______,                            _______,                            _______, _______, _______, _______, _______  \
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          KC_WH_U, _______, \
+        _______, _______, _______,                            _______,                            _______, _______, KC_WH_L, KC_WH_D, KC_WH_R  \
     ),
     [FUN] = LAYOUT_65_ansi_blocker(
         KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, KC_MUTE, \
@@ -243,7 +243,7 @@ led_instruction_t led_instructions[] = {
     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = MACDEFA, .id0 = 4294967295, .id1 = 4294967295, .id2 = 7, .r = 255, .g = 255, .b = 255 },//.r = 0, .g = 255, .b = 30 },
     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = MACDEFA, .id1 = 3221225472, .r = 255, .g = 255 },
 
-    { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = MOUSEMOD, .id0 = 8388608, .id1 = 224, .r = 255, .g = 255 },
+    { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = MOUSEMOD, .id0 = 8388608, .id1 = 16777440, .id2 = 7, .r = 255, .g = 255 },
 
     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = FUN, .id0 = 771768320, .id1 = 50464768, .id2 = 7, .r = 255 },
     { .flags = LED_FLAG_MATCH_LAYER | LED_FLAG_MATCH_ID | LED_FLAG_USE_RGB, .layer = FUN, .id0 = 8190, .r = 255, .g = 255, .b = 255 },
